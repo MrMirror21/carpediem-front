@@ -7,7 +7,7 @@ import SmallMic from '@/assets/images/mic_s.svg'
 import NotiBalloon from '@/assets/images/notificate_balloon.svg'
 import { useState } from 'react';
 import SliderButton from '@/components/voice-recognition/SlideButton';
-import { getPrompt } from '@/api/getKEywords';
+import { getPrompt } from '@/api/getKeywords';
 import { useNavigate } from 'react-router-dom';
 import Loading from '@/components/Loading/Loading';
 import RecordingGIF from '@/assets/images/Spinner/recording.gif';
