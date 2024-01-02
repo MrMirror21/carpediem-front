@@ -36,7 +36,7 @@ export const getPrompt = async (textData, navigate) => {
   let config = {
     method: "post",
     maxBodyLength: Infinity,
-    url: "https://65947ed9e1f78916e0f1d51e--idyllic-duckanoo-bbfb84.netlify.app//api/v1/chat/completions",
+    url: "/api/v1/chat/completions",
     headers: {
       "Content-Type": "application/json",
       Authorization: `Bearer ${apiKey}`,
