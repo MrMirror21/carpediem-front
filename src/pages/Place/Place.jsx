@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import React, { useState } from "react";
+import { useState } from "react";
 import MapContainer from "@/components/Place/MapContainer";
 import { useEffect } from "react";
 import PlaceImage1 from "../../assets/images/Place/placeImage_building.png";

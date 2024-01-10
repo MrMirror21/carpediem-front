@@ -13,7 +13,7 @@ import Loading from '@/components/Loading/Loading';
 import RecordingGIF from '@/assets/images/Spinner/recording.gif';
 import PulseGIF from '@/assets/images/Spinner/pulse.gif';
 import Reset from '@/assets/images/voice-recognition/reset.svg';
-import TextPage from './TextPage';
+import TextPage from '@/pages/voice-recognition/TextPage.jsx';
 
 const VoicePage = () => {
   const navigate = useNavigate();
