@@ -1,5 +1,6 @@
 import Spinner from "@/assets/images/Spinner/Spinner2.gif";
 import styled from "styled-components";
+import PropTypes from "prop-types";
 
 const Wrapper = styled.div`
   position: fixed;
@@ -29,7 +30,7 @@ const LoadingContainer = styled.div`
   line-height: normal;
 `;
 
-export default function Loading({loadingText}) {
+export default function Loading({ loadingText }) {
   // 룰렛으로 데이터 전달
   return (
     <Wrapper>
@@ -40,3 +41,7 @@ export default function Loading({loadingText}) {
     </Wrapper>
   );
 }
+
+Loading.propTypes = {
+  loadingText: PropTypes.string,
+};

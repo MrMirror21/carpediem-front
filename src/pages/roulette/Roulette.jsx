@@ -3,14 +3,20 @@ import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import StarLight from "@/components/Roulette/StarLight";
 import {
+  FlexRow,
   RouletteWrapper,
   SpinBtn,
   RouletteTool,
   RoulettePin,
   ResultBox,
   PrevBox,
+  DownLoadImage,
+  ArrowImage,
 } from "@/styles/styles";
 import "@/styles//Roulette.css";
+import { useRef } from "react";
+import html2canvas from "html2canvas";
+import saveAs from "file-saver";
 
 function Roulette() {
   const navigate = useNavigate();
@@ -87,8 +93,32 @@ function Roulette() {
     } */
   };
 
+  // image 저장
+  const divRef = useRef(null);
+
+  // 다운로드 함수
+  const handleDownload = async () => {
+    if (!divRef.current) return;
+
+    try {
+      const div = divRef.current;
+      // 렌더링 하고자 하는 요소, 캔버스의 해상도(scale: 2는 기본 해상도의 2배)
+      const canvas = await html2canvas(div, { scale: 2 });
+
+      // blob으로 변환
+      canvas.toBlob((blob) => {
+        if (blob !== null) {
+          // 파일 이름
+          saveAs(blob, "Roulette.png");
+        }
+      });
+    } catch (error) {
+      console.error("error:", error);
+    }
+  };
+
   return (
-    <RouletteWrapper>
+    <RouletteWrapper ref={divRef}>
       <RouletteTool>
         <RoulettePin />
         <Wheel
@@ -122,29 +152,23 @@ function Roulette() {
           <SpinBtn onClick={handleFirstSpinClick}>{spinText}</SpinBtn>
         </>
       ) : (
-        <div
-          style={{
-            display: "flex",
-            width: "95%",
-            justifyContent: "space-between",
-          }}
-        >
-          <div style={{ flex: "0 0 45%" }}>
-            <SpinBtn onClick={handleSpinClick} width="45%">
-              {spinText}
-            </SpinBtn>
-          </div>
-          <div style={{ flex: "0 0 48%" }}>
-            <SpinBtn
-              onClick={handlePostPlace}
-              width="45%"
-              color="#000"
-              bg="#FFE03D"
-            >
-              추천장소 바로가기
-            </SpinBtn>
-          </div>
-        </div>
+        <FlexRow>
+          <SpinBtn onClick={handleDownload} width="17%" bg="#fff">
+            <DownLoadImage />
+          </SpinBtn>
+          <SpinBtn onClick={handleSpinClick} width="40%">
+            {spinText}
+          </SpinBtn>
+          <SpinBtn
+            onClick={handlePostPlace}
+            width="45%"
+            color="#000"
+            bg="#FFE03D"
+          >
+            장소 추천
+            <ArrowImage />
+          </SpinBtn>
+        </FlexRow>
       )}
       <StarLight />
     </RouletteWrapper>

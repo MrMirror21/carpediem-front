@@ -4,6 +4,8 @@ import R_Tool from "@/assets/images/Roulette/RouletteTool.svg";
 import R_Pin from "@/assets/images/Roulette/RoulettePin.svg";
 import Result from "@/assets/images/Roulette/ResultBox.svg";
 import Prev from "@/assets/images/Roulette/PrevBox.svg";
+import DownLoad from "@/assets/images/Roulette/download.svg";
+import Arrow from "@/assets/images/Roulette/arrow.svg";
 import Logo from "@/assets/images/IT/logo.svg";
 import ITLogo from "@/assets/images/IT/logo2.svg";
 import ITPerson from "@/assets/images/IT/Person.svg";
@@ -53,6 +55,14 @@ export const Page = styled.div`
   max-width: 390px;
   background-color: #00a3ff;
   align-items: center;
+`;
+
+export const FlexRow = styled.div`
+  display: flex;
+  flex-direction: row;
+  gap: 10px;
+  max-width: 330px;
+  width: 100%;
 `;
 
 export const HomeImage = styled.div`
@@ -256,14 +266,13 @@ export const RouletteWrapper = styled.div`
 `;
 
 export const SpinBtn = styled.button`
-  position: absolute;
-  top: 720px;
+  margin-top: 38px;
   display: flex;
   width: ${(props) => props.width || "338px"};
-  height: 55px;
+  height: 50px;
   align-items: center;
   justify-content: center;
-  border-radius: 8.213px;
+  border-radius: 10px;
   border: 1px solid #cfcfcf;
   background-color: ${(props) => props.bg || "#000"};
   color: ${(props) => props.color || "#fff"};
@@ -271,6 +280,7 @@ export const SpinBtn = styled.button`
   font-size: 18px;
   font-weight: 800;
   z-index: 1000;
+  cursor: pointer;
 `;
 
 export const RouletteTool = styled.div`
@@ -325,6 +335,19 @@ export const PrevBox = styled.div`
   font-size: 20px;
   font-weight: 600;
   text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+`;
+
+export const DownLoadImage = styled.div`
+  width: 24px;
+  height: 24px;
+  background-image: url(${DownLoad});
+  background-repeat: no-repeat;
+`;
+export const ArrowImage = styled.div`
+  width: 28px;
+  height: 32px;
+  background-image: url(${Arrow});
+  background-repeat: no-repeat;
 `;
 /**  서브 페이지1 스타일 **/
 // ...
