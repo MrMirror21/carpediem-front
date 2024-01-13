@@ -3,12 +3,15 @@ import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
 import StarLight from "@/components/Roulette/StarLight";
 import {
+  FlexRow,
   RouletteWrapper,
   SpinBtn,
   RouletteTool,
   RoulettePin,
   ResultBox,
   PrevBox,
+  DownLoadImage,
+  ArrowImage,
 } from "@/styles/styles";
 import "@/styles//Roulette.css";
 
@@ -122,29 +125,23 @@ function Roulette() {
           <SpinBtn onClick={handleFirstSpinClick}>{spinText}</SpinBtn>
         </>
       ) : (
-        <div
-          style={{
-            display: "flex",
-            width: "95%",
-            justifyContent: "space-between",
-          }}
-        >
-          <div style={{ flex: "0 0 45%" }}>
-            <SpinBtn onClick={handleSpinClick} width="45%">
-              {spinText}
-            </SpinBtn>
-          </div>
-          <div style={{ flex: "0 0 48%" }}>
-            <SpinBtn
-              onClick={handlePostPlace}
-              width="45%"
-              color="#000"
-              bg="#FFE03D"
-            >
-              추천장소 바로가기
-            </SpinBtn>
-          </div>
-        </div>
+        <FlexRow>
+          <SpinBtn width="17%" bg="#fff">
+            <DownLoadImage />
+          </SpinBtn>
+          <SpinBtn onClick={handleSpinClick} width="40%">
+            {spinText}
+          </SpinBtn>
+          <SpinBtn
+            onClick={handlePostPlace}
+            width="45%"
+            color="#000"
+            bg="#FFE03D"
+          >
+            장소 추천
+            <ArrowImage />
+          </SpinBtn>
+        </FlexRow>
       )}
       <StarLight />
     </RouletteWrapper>
