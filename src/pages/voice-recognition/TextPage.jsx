@@ -1,12 +1,12 @@
 import styled from 'styled-components';
-import { Wrapper } from '../../styles/styles'
-import SliderButton from '../../components/voice-recognition/SlideButton';
-import NotiBalloon from '../../assets/images/notificate_balloon.svg'
+import { Wrapper } from '@/styles/styles'
+import SliderButton from '@/components/voice-recognition/SlideButton';
+import NotiBalloon from '@/assets/images/notificate_balloon.svg'
 import Pen from '@/assets/images/Pen.svg'
 import { useState } from 'react';
-import Loading from '../../components/Loading/Loading';
+import Loading from '@/components/Loading/Loading';
 import { useNavigate } from 'react-router-dom';
-import { getPrompt } from '../../api/getKeywords';
+import { getKeywords } from '../../api/getKeywords';
 
 const TextPage = () => {
   const navigate = useNavigate();
@@ -15,8 +15,8 @@ const TextPage = () => {
   const [currentPage, setCurrentPage] = useState("text");
   const handleSubmit = async () => {
     setIsLoading(true);
-    //getKeywords(content, navigate);
-    getPrompt(content, navigate);
+    console.log(content);
+    getKeywords(content, navigate);
 }
 return (
 <>
