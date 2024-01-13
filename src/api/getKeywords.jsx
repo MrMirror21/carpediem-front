@@ -20,7 +20,8 @@ export const getKeywords= (textData, navigate) => {
     .catch((error) => {
       console.log(error);
     });
-};
+  })
+}
 
 // 클라이언트에서 직접 gpt에 요청하는 코드
 export const getPrompt = async (textData, navigate) => {
@@ -60,7 +61,6 @@ export const getPrompt = async (textData, navigate) => {
           data: keywordsArr,
         },
       });
-    })
   })
   .catch((error) => {
     console.log(error);
