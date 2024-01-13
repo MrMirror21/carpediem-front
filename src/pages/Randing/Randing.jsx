@@ -9,8 +9,9 @@ import {
   CarpediemText,
 } from "@/styles/styles.jsx";
 import { dummy } from "@/api/ITDummy";
-import "@/styles//Randing.css";
 import { useNavigate } from "react-router-dom";
+// import { apiClient } from "@/api/ApiClient";
+// import axios from "axios";
 
 export default function Randing() {
   const navigate = useNavigate();
@@ -26,15 +27,32 @@ export default function Randing() {
 
   // test code
 
-  const getTest = () => {
+  /* const getTest = () => {
     navigate("/IT", { state: data });
+  }; */
+
+  const getITData = async () => {
+    try {
+      const response = await fetch(`https://dev.umc-carpediem.shop/info/today`);
+      const body = await response.json();
+      console.log("data : ", body);
+      navigate("/IT", { state: body });
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
   };
 
   /*
   const getITData = async () => {
     try {
-      const response = await apiClient.get("/info/getHome");
-      console.log("data : ", response);
+      const response = await fetch("https://dev.umc-carpediem.shop/info/today");
+
+      if (!response.ok) {
+        throw new Error(`HTTP error! Status: ${response.status}`);
+      }
+
+      const data = await response.json();
+      console.log("data: ", data);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
@@ -54,7 +72,7 @@ export default function Randing() {
             <CarpediemText />
           </StyledParagraph>
         </div>
-        <BlackButton onClick={getTest}>오늘의 알쓸신잡</BlackButton>
+        <BlackButton onClick={getITData}>오늘의 알쓸신잡</BlackButton>
         <YellowButtonR onClick={handleVoice}>
           <Carpediem />
         </YellowButtonR>

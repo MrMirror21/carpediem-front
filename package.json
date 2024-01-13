@@ -32,5 +32,6 @@
   "main": "index.js",
   "repository": "https://github.com/UMC-E-TEAM/Front.git",
   "author": "sohee <sohee5143@naver.com>",
-  "license": "MIT"
+  "license": "MIT",
+  "proxy": "http://3.39.22.237:8080"
 }

@@ -8,7 +8,6 @@ import {
   GroomImage,
   Carpediem,
 } from "@/styles/styles.jsx";
-import "@/styles//IT.css";
 import { useLocation, useNavigate } from "react-router-dom";
 
 export default function IT() {
@@ -16,7 +15,7 @@ export default function IT() {
   const navigate = useNavigate();
 
   const data = location.state || null;
-  console.log("data : ", data);
+  console.log("결과 : ", data.result);
 
   const handleVoice = () => {
     navigate("/voice-recognition");
@@ -27,8 +26,8 @@ export default function IT() {
       <ITContainer>
         <GroomImage />
         <PersonImage />
-        <ITTitle>{data.title}</ITTitle>
-        <ITContent>{data.content}</ITContent>
+        <ITTitle>{data.result.title}</ITTitle>
+        <ITContent>{data.result.content}</ITContent>
         <YellowButton onClick={handleVoice}>
           <Carpediem />
         </YellowButton>
