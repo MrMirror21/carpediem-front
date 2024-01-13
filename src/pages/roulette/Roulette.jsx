@@ -14,6 +14,9 @@ import {
   ArrowImage,
 } from "@/styles/styles";
 import "@/styles//Roulette.css";
+import { useRef } from "react";
+import html2canvas from "html2canvas";
+import saveAs from "file-saver";
 
 function Roulette() {
   const navigate = useNavigate();
@@ -90,8 +93,32 @@ function Roulette() {
     } */
   };
 
+  // image 저장
+  const divRef = useRef(null);
+
+  // 다운로드 함수
+  const handleDownload = async () => {
+    if (!divRef.current) return;
+
+    try {
+      const div = divRef.current;
+      // 렌더링 하고자 하는 요소, 캔버스의 해상도(scale: 2는 기본 해상도의 2배)
+      const canvas = await html2canvas(div, { scale: 2 });
+
+      // blob으로 변환
+      canvas.toBlob((blob) => {
+        if (blob !== null) {
+          // 파일 이름
+          saveAs(blob, "Roulette.png");
+        }
+      });
+    } catch (error) {
+      console.error("error:", error);
+    }
+  };
+
   return (
-    <RouletteWrapper>
+    <RouletteWrapper ref={divRef}>
       <RouletteTool>
         <RoulettePin />
         <Wheel
@@ -126,7 +153,7 @@ function Roulette() {
         </>
       ) : (
         <FlexRow>
-          <SpinBtn width="17%" bg="#fff">
+          <SpinBtn onClick={handleDownload} width="17%" bg="#fff">
             <DownLoadImage />
           </SpinBtn>
           <SpinBtn onClick={handleSpinClick} width="40%">
