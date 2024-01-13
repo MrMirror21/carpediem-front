@@ -48,6 +48,7 @@ const MapContainer = ({ searchPlace }) => {
         });
 
         function placesSearchCB(data, status) {
+          setIsLoading(false);
           if (status === kakao.maps.services.Status.OK) {
             let bounds = new kakao.maps.LatLngBounds();
 
@@ -57,7 +58,6 @@ const MapContainer = ({ searchPlace }) => {
 
             map.setBounds(bounds);
             setPlaces(data);
-            setIsLoading(false);
           }
         }
       } catch (error) {

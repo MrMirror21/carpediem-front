@@ -11,16 +11,14 @@ import {
 import { dummy } from "@/api/ITDummy";
 import "@/styles//Randing.css";
 import { useNavigate } from "react-router-dom";
-import { apiClient } from "@/api/ApiClient";
 
 export default function Randing() {
   const navigate = useNavigate();
 
   const dummydata = dummy;
 
-  // 0 인덱스부터 14 인덱스까지의 날짜와 해당 날짜에 해당하는 데이터를 출력
-  const currentDate = new Date();
-  const indexDate = (currentDate.getDate() - 3) % 14;
+  // 0부터 14까지의 랜덤 숫자 생성
+  const indexDate = Math.floor(Math.random() * 15);
 
   // 현재 날짜를 기준으로 0 인덱스부터 14 인덱스까지의 데이터를 가져옴
   const data = dummydata.data[indexDate];
@@ -32,14 +30,16 @@ export default function Randing() {
     navigate("/IT", { state: data });
   };
 
+  /*
   const getITData = async () => {
     try {
-      const response = await fetch("http://3.39.187.248/info/getHome");
+      const response = await apiClient.get("/info/getHome");
       console.log("data : ", response);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   };
+  */
 
   const handleVoice = () => {
     navigate("/voice-recognition");

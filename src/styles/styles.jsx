@@ -51,7 +51,6 @@ export const Page = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 390px;
-  border: 1px solid blue;
   background-color: #00a3ff;
   align-items: center;
 `;
@@ -70,7 +69,7 @@ export const HomeImage = styled.div`
 
 export const StyledTitle = styled.div`
   margin-top: 20px;
-  font-family: 'Nanum Pen', cursive;
+  font-family: "Nanum Pen", cursive;
   font-size: 25px;
   line-height: 0.5;
   color: #333;
@@ -252,7 +251,6 @@ export const RouletteWrapper = styled.div`
   display: flex;
   flex-direction: column;
   max-width: 390px;
-  border: 1px solid blue;
   background-color: #00a3ff;
   align-items: center;
 `;
