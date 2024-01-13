@@ -147,7 +147,6 @@ function Roulette() {
           </div>
         </div>
       )}
-      <div>(test)선택되었습니다 : {prizeNumber}</div>
       <StarLight />
     </RouletteWrapper>
   );
