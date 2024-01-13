@@ -1,6 +1,32 @@
 import axios from "axios";
-import { apiClient } from './ApiClient';
+// import { apiClient } from "./ApiClient";
 
+export const getKeywords = async (textData, navigate) => {
+  try {
+    let response = await fetch(
+      `https://dev.umc-carpediem.shop/keywords/result?content=${textData}`
+    );
+
+    if (response.ok) {
+      const data = await response.json();
+      console.log(data);
+      navigate("/roulette", {
+        state: {
+          data: data,
+        },
+      });
+      return data; // Return the data instead of logging it
+    } else {
+      console.error(`Error: ${response.status} ${response.statusText}`);
+      throw new Error(`Error: ${response.status} ${response.statusText}`);
+    }
+  } catch (error) {
+    console.error("Error fetching data:", error);
+    throw error;
+  }
+};
+
+/*
 export const getKeywords= (textData, navigate) => {
   let config = {
     method: "get",
@@ -22,6 +48,7 @@ export const getKeywords= (textData, navigate) => {
     });
   })
 }
+*/
 
 // 클라이언트에서 직접 gpt에 요청하는 코드
 export const getPrompt = async (textData, navigate) => {
@@ -61,8 +88,8 @@ export const getPrompt = async (textData, navigate) => {
           data: keywordsArr,
         },
       });
-  })
-  .catch((error) => {
-    console.log(error);
-  })
+    })
+    .catch((error) => {
+      console.log(error);
+    });
 };

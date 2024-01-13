@@ -17,12 +17,11 @@ function Roulette() {
   const location = useLocation();
 
   // 데이터 받아오기
-  const data2 = location.state.data || null;
-  console.log("data2 : ", data2);
+  const data = location.state.data || null;
+  console.log("data : ", data.result);
 
-  let key = 0;
-  const Data = data2.map(() => {
-    const value = data2[key++];
+  const Data = data.result.map((item) => {
+    const value = item.optionTitle;
     console.log("vaule", value);
     return { option: value };
   });
