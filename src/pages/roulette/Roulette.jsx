@@ -101,7 +101,7 @@ function Roulette() {
           radiusLineColor={["tranparent"]}
           outerBorderColor={["tranparent"]}
           textColors={["#000"]}
-          fontSize={[15]}
+          fontSize={[30]}
           backgroundColors={["#00A3FF", "#FFB13D"]}
           pointerProps={{ src: "@/assets/images/Roulette/RoulettePin.svg" }}
         />
