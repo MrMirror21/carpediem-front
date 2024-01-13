@@ -1,36 +1,28 @@
 import axios from "axios";
-import FormData from "form-data";
+import { apiClient } from './ApiClient';
 
-axios.defaults.withCredentials = true;
-
-export const getKeywords = ({ textData, navigate }) => {
-  let data = new FormData();
-  data.append("data", textData);
-
+export const getKeywords= (textData, navigate) => {
   let config = {
     method: "get",
     maxBodyLength: Infinity,
-    url: `http://3.39.187.248/search/result`,
-    headers: {},
-    withCredentials: true,
-    data: data,
+    url: `/keywords/result?content=${textData}`,
+    headers: { 
+    },
   };
-
-  axios
-    .request(config)
-    .then((response) => {
-      console.log(response);
-      navigate("/roulette", {
-        state: {
-          data: response.data.map((element) => element.optiontitle),
-        },
-      });
+  
+  apiClient.request(config)
+  .then((response) => {
+    navigate("/roulette", {
+      state: {
+        data : response.data.result.map(element => element.optionTitle)
+      }
     })
     .catch((error) => {
       console.log(error);
     });
 };
 
+// 클라이언트에서 직접 gpt에 요청하는 코드
 export const getPrompt = async (textData, navigate) => {
   const apiKey = import.meta.env.VITE_APP_GPT_KEY;
   let config = {
@@ -69,55 +61,8 @@ export const getPrompt = async (textData, navigate) => {
         },
       });
     })
-    .catch((error) => {
-      console.log(error);
-    });
-};
-
-// 룰렛 페이지로 정보 넘기는 테스트용 함수
-export const getKeywordsTest = (textData, navigate) => {
-  navigate("/roulette", {
-    state: {
-      data: dummyData.data.map((element) => element.optionTitle),
-    },
-  });
-};
-
-//
-const dummyData = {
-  status: 202,
-  message: "조회에 성공하였습니다",
-  data: [
-    {
-      optionTitle: "스키/스노보드",
-    },
-    {
-      optionTitle: "눈싸움",
-    },
-    {
-      optionTitle: "눈사람 만들기",
-    },
-    {
-      optionTitle: "스케이트보드",
-    },
-    {
-      optionTitle: "스케이팅",
-    },
-    {
-      optionTitle: "빙하 탐험",
-    },
-    {
-      optionTitle: "야외 캠프파이어",
-    },
-    {
-      optionTitle: "눈에 편한 캠핑",
-    },
-    {
-      optionTitle: "워커 췬",
-    },
-    {
-      optionTitle: "눈썰매",
-    },
-  ],
-  succeess: true,
+  })
+  .catch((error) => {
+    console.log(error);
+  })
 };
