@@ -85,6 +85,7 @@ export const StyledTitle = styled.div`
   color: #333;
   text-align: center;
   animation: ${slideInUp("70%")} 0.8s ease-out;
+  pointer-events: none;
 `;
 
 /**  랜딩 페이지 스타일 **/
@@ -108,6 +109,7 @@ export const StyledParagraph = styled.div`
   color: #333;
   text-align: center;
   animation: ${slideInUp("70%")} 0.8s ease-out;
+  pointer-events: none;
 `;
 
 export const BlackButton = styled.button`
@@ -121,6 +123,7 @@ export const BlackButton = styled.button`
   background-color: black;
   border-radius: 7%;
   animation: ${slideInUp("80%")} 0.8s ease-out;
+  cursor: pointer;
 `;
 export const YellowButtonR = styled.button`
   display: flex;
@@ -135,6 +138,7 @@ export const YellowButtonR = styled.button`
   border: 1px solid #dadad7;
   border-radius: 8%;
   animation: ${slideInUp("90%")} 0.8s ease-out;
+  cursor: pointer;
 `;
 
 /** 알쓸신잡 페이지 **/
@@ -183,6 +187,7 @@ export const ITTitle = styled.div`
   margin-top: 24px;
 
   animation: ${slideInUp("80%")} 0.8s ease-out;
+  pointer-events: none;
 `;
 
 export const ITContent = styled.div`
@@ -197,6 +202,7 @@ export const ITContent = styled.div`
   border-radius: 7%;
 
   animation: ${slideInUp("20%")} 0.8s ease-out;
+  pointer-events: none;
 `;
 
 export const YellowButton = styled(YellowButtonR)`
@@ -212,6 +218,7 @@ export const YellowButton = styled(YellowButtonR)`
   border: 1px solid #dadad7;
   border-radius: 8%;
   animation: ${slideInUp("70%")} 0.8s ease-out;
+  cursor: pointer;
 `;
 
 /**  룰렛 페이지 **/
@@ -320,6 +327,7 @@ export const ResultBox = styled.div`
   font-size: 20px;
   font-weight: 600;
   text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+  pointer-events: none;
 `;
 
 export const PrevBox = styled.div`
@@ -335,6 +343,7 @@ export const PrevBox = styled.div`
   font-size: 20px;
   font-weight: 600;
   text-shadow: -1px 0 #fff, 0 1px #fff, 1px 0 #fff, 0 -1px #fff;
+  pointer-events: none;
 `;
 
 export const DownLoadImage = styled.div`
