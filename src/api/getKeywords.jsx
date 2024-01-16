@@ -4,7 +4,7 @@ import axios from "axios";
 export const getKeywords = async (textData, navigate) => {
   try {
     let response = await fetch(
-      `https://dev.umc-carpediem.shop/keywords/result?content=${textData}`
+      `https://dev.umc-carpediem.shop/api/keywords/result?content=${textData}`
     );
 
     if (response.ok) {
@@ -17,6 +17,7 @@ export const getKeywords = async (textData, navigate) => {
       });
       return data; // Return the data instead of logging it
     } else {
+      console.error(response);
       console.error(`Error: ${response.status} ${response.statusText}`);
       throw new Error(`Error: ${response.status} ${response.statusText}`);
     }
@@ -31,7 +32,7 @@ export const getKeywords= (textData, navigate) => {
   let config = {
     method: "get",
     maxBodyLength: Infinity,
-    url: `/keywords/result?content=${textData}`,
+    url: `/api/keywords/result?content=${textData}`,
     headers: { 
     },
   };
