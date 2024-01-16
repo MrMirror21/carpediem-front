@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import { useEffect, useState } from "react";
 import styled from "styled-components";
 import nextButton from "../../assets/images/Place/nextButton.png";
 import prevButton from "../../assets/images/Place/prevButton.png";
@@ -47,7 +47,7 @@ const MapContainer = ({ searchPlace }) => {
           sort: kakao.maps.services.SortBy.DISTANCE,
         });
 
-        function placesSearchCB(data, status) {
+        const placesSearchCB = (data, status) => {
           setIsLoading(false);
           if (status === kakao.maps.services.Status.OK) {
             let bounds = new kakao.maps.LatLngBounds();

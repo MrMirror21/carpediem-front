@@ -48,8 +48,11 @@ export default function Place() {
 
 const PlaceContainer = styled.div`
   width: 100%;
+  max-width: 390px;
+  margin: auto;
   white-space: pre-wrap;
   width: 100%;
+  max-height: 844px;
 `;
 
 const MainText = styled.div`
