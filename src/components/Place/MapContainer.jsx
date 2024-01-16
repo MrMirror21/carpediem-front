@@ -5,7 +5,7 @@ import prevButton from "../../assets/images/Place/prevButton.png";
 import { Link } from "react-router-dom";
 
 const { kakao } = window;
-const MapContainer = ({ searchPlace }) => {
+const MapContainer = ({ searchPlace, setPlaceCode }) => {
   const [Places, setPlaces] = useState([]);
   const [Index, setIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
@@ -40,13 +40,6 @@ const MapContainer = ({ searchPlace }) => {
         };
 
         const map = new kakao.maps.Map(container, options);
-
-        const ps = new kakao.maps.services.Places();
-        ps.keywordSearch(searchPlace, placesSearchCB, {
-          location: currentCoordinate,
-          sort: kakao.maps.services.SortBy.DISTANCE,
-        });
-
         const placesSearchCB = (data, status) => {
           setIsLoading(false);
           if (status === kakao.maps.services.Status.OK) {
@@ -58,8 +51,14 @@ const MapContainer = ({ searchPlace }) => {
 
             map.setBounds(bounds);
             setPlaces(data);
+            setPlaceCode(data[0].category_group_code)
           }
         }
+        const ps = new kakao.maps.services.Places();
+        ps.keywordSearch(searchPlace, placesSearchCB, {
+          location: currentCoordinate,
+          sort: kakao.maps.services.SortBy.DISTANCE,
+        });
       } catch (error) {
         console.error("Error fetching data:", error);
         setIsLoading(false);
@@ -75,11 +74,14 @@ const MapContainer = ({ searchPlace }) => {
 
   // 이미지 넘기기 버튼
   const onNextImage = () => {
+    const nextIndex = (Index + 1) % placeLength;
+    setPlaceCode(Places[nextIndex].category_group_code);
     setIndex((prevIndex) => (prevIndex + 1) % placeLength);
-    console.log(Places);
   };
 
   const onPrevImage = () => {
+    const nextIndex = Index === 0 ? placeLength - 1 : Index - 1;
+    setPlaceCode(Places[nextIndex].category_group_code);
     setIndex((prevIndex) =>
       prevIndex === 0 ? placeLength - 1 : prevIndex - 1
     );

@@ -4,7 +4,7 @@ import axios from "axios";
 export const getKeywords = async (textData, navigate) => {
   try {
     let response = await fetch(
-      `https://dev.umc-carpediem.shop/keywords/result?content=${textData}`
+      `https://dev.umc-carpediem.shop/api/keywords/result?content=${textData}`
     );
 
     if (response.ok) {
