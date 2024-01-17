@@ -37,7 +37,12 @@ return (
     <Wrapper>
       {isLoading && <Loading loadingText="룰렛을 생성중입니다..." />}
       <PageBody>
-      <SliderButton isVoice={isVoice} setIsVoice={setIsVoice} />
+      <SliderButton
+        isSelected={isVoice}
+        onClick={()=>navigate("/text")}
+        option1="음성인식"
+        option2="텍스트"
+      />
       <Instructions className='instruction'>하단의 버튼을 눌러 오늘의 활동을 계획해보세요</Instructions>
       <VoiceRecord>
         <RecordButton onClick={toggleListening}>

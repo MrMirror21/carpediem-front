@@ -10,6 +10,7 @@ import { getKeywords } from "../../api/getKeywords";
 
 const TextPage = () => {
   const navigate = useNavigate();
+  const [isVoice, setIsVoice] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [content, setContent] = useState("");
   const [currentPage, setCurrentPage] = useState("text");
@@ -25,8 +26,10 @@ const TextPage = () => {
         {isLoading && <Loading loadingText="룰렛을 생성중입니다..." />}
         <PageBody>
           <SliderButton
-            currentPage={currentPage}
-            setCurrentPage={setCurrentPage}
+            isSelected={isVoice}
+            onClick={()=>navigate("/voice-recognition")}
+            option1="음성인식"
+            option2="텍스트"
           />
           <Instructions className="instruction">
             하단의 텍스트를 입력해 활동을 계획해보세요
