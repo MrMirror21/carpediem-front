@@ -33,7 +33,7 @@ export default function Randing() {
 
   const getITData = async () => {
     try {
-      const response = await fetch(`https://dev.umc-carpediem.shop/info/today`);
+      const response = await fetch(`https://dev.umc-carpediem.shop/api/info/today`);
       const body = await response.json();
       console.log("data : ", body);
       navigate("/IT", { state: body });
