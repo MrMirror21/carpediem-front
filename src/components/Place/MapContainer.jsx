@@ -5,7 +5,7 @@ import prevButton from "../../assets/images/Place/prevButton.png";
 import { Link } from "react-router-dom";
 
 const { kakao } = window;
-const MapContainer = ({ searchPlace, setPlaceCode }) => {
+const MapContainer = ({ searchPlace, setPlaceCode, isNearSearch }) => {
   const [Places, setPlaces] = useState([]);
   const [Index, setIndex] = useState(0);
   const [isLoading, setIsLoading] = useState(true);
@@ -42,6 +42,7 @@ const MapContainer = ({ searchPlace, setPlaceCode }) => {
         const map = new kakao.maps.Map(container, options);
         const placesSearchCB = (data, status) => {
           setIsLoading(false);
+          setPlaces([]);
           if (status === kakao.maps.services.Status.OK) {
             let bounds = new kakao.maps.LatLngBounds();
 
@@ -51,13 +52,14 @@ const MapContainer = ({ searchPlace, setPlaceCode }) => {
 
             map.setBounds(bounds);
             setPlaces(data);
-            setPlaceCode(data[0].category_group_code)
+            setPlaceCode(data[0].category_group_code);
+            console.log(data);
           }
         }
         const ps = new kakao.maps.services.Places();
         ps.keywordSearch(searchPlace, placesSearchCB, {
           location: currentCoordinate,
-          sort: kakao.maps.services.SortBy.DISTANCE,
+          radius: (isNearSearch ? 3000 : 20000)
         });
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -65,7 +67,7 @@ const MapContainer = ({ searchPlace, setPlaceCode }) => {
       }
     };
     fetchData();
-  }, [searchPlace]);
+  }, [searchPlace, isNearSearch]);
 
   let placeLength = 5;
   if (Places.length < 5) {
@@ -121,15 +123,15 @@ const MapContainer = ({ searchPlace, setPlaceCode }) => {
                     fill="none"
                   >
                     <path
-                      fill-rule="evenodd"
-                      clip-rule="evenodd"
+                      fillRule="evenodd"
+                      clipRule="evenodd"
                       d="M12.6499 6.98047C12.6499 8.23488 12.2534 9.39668 11.5789 10.3474L6.95806 17.1045C6.89916 17.1906 6.77216 17.1907 6.71307 17.1047L2.03954 10.3033C2.02666 10.2848 2.01388 10.2662 2.00121 10.2475L1.97427 10.2083H1.97483C1.35867 9.28434 0.999512 8.17435 0.999512 6.98047C0.999512 3.7633 3.60754 1.15527 6.82471 1.15527C10.0419 1.15527 12.6499 3.7633 12.6499 6.98047ZM6.82445 10.1516C8.64608 10.1516 10.1228 8.67486 10.1228 6.85323C10.1228 5.0316 8.64608 3.55488 6.82445 3.55488C5.00282 3.55488 3.5261 5.0316 3.5261 6.85323C3.5261 8.67486 5.00282 10.1516 6.82445 10.1516Z"
                       fill="#00A3FF"
                     />
                     <path
                       d="M11.5789 10.3474L11.5304 10.313L11.5299 10.3139L11.5789 10.3474ZM6.95806 17.1045L6.90902 17.0709L6.90902 17.0709L6.95806 17.1045ZM6.71307 17.1047L6.66411 17.1384L6.66411 17.1384L6.71307 17.1047ZM2.03954 10.3033L2.0885 10.2696L2.08831 10.2694L2.03954 10.3033ZM2.00121 10.2475L2.05036 10.2141L2.05017 10.2139L2.00121 10.2475ZM1.97427 10.2083V10.1489H1.86137L1.92531 10.2419L1.97427 10.2083ZM1.97483 10.2083V10.2677H2.08585L2.02425 10.1753L1.97483 10.2083ZM11.6273 10.3818C12.3087 9.42134 12.7093 8.2476 12.7093 6.98047H12.5905C12.5905 8.22216 12.1981 9.37202 11.5304 10.313L11.6273 10.3818ZM7.00709 17.138L11.6279 10.3809L11.5299 10.3139L6.90902 17.0709L7.00709 17.138ZM6.66411 17.1384C6.74683 17.2588 6.92464 17.2586 7.00709 17.138L6.90902 17.0709C6.87368 17.1226 6.79748 17.1227 6.76203 17.0711L6.66411 17.1384ZM1.99058 10.3369L6.66411 17.1384L6.76203 17.0711L2.0885 10.2696L1.99058 10.3369ZM1.95205 10.2809C1.96485 10.2997 1.97776 10.3185 1.99078 10.3372L2.08831 10.2694C2.07555 10.251 2.0629 10.2326 2.05036 10.2141L1.95205 10.2809ZM1.92531 10.2419L1.95225 10.2811L2.05017 10.2139L2.02323 10.1747L1.92531 10.2419ZM1.97483 10.1489H1.97427V10.2677H1.97483V10.1489ZM0.940108 6.98047C0.940108 8.18644 1.30294 9.30784 1.92541 10.2413L2.02425 10.1753C1.4144 9.26084 1.05892 8.16226 1.05892 6.98047H0.940108ZM6.82471 1.09587C3.57473 1.09587 0.940108 3.73049 0.940108 6.98047H1.05892C1.05892 3.79611 3.64035 1.21468 6.82471 1.21468V1.09587ZM12.7093 6.98047C12.7093 3.73049 10.0747 1.09587 6.82471 1.09587V1.21468C10.0091 1.21468 12.5905 3.79611 12.5905 6.98047H12.7093ZM10.0634 6.85323C10.0634 8.64205 8.61327 10.0922 6.82445 10.0922V10.211C8.67889 10.211 10.1822 8.70767 10.1822 6.85323H10.0634ZM6.82445 3.61428C8.61327 3.61428 10.0634 5.06441 10.0634 6.85323H10.1822C10.1822 4.99879 8.67889 3.49548 6.82445 3.49548V3.61428ZM3.5855 6.85323C3.5855 5.06441 5.03563 3.61428 6.82445 3.61428V3.49548C4.97001 3.49548 3.46669 4.99879 3.46669 6.85323H3.5855ZM6.82445 10.0922C5.03563 10.0922 3.5855 8.64205 3.5855 6.85323H3.46669C3.46669 8.70767 4.97001 10.211 6.82445 10.211V10.0922Z"
                       fill="white"
-                      fill-opacity="0.1"
+                      fillOpacity="0.1"
                     />
                   </Icon>
                   {Places[Index].road_address_name ? (

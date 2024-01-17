@@ -2,23 +2,24 @@ import styled from "styled-components";
 import { useState } from "react";
 import MapContainer from "@/components/Place/MapContainer";
 import { useEffect } from "react";
-import PlaceImage1 from "../../assets/images/Place/placeImage_building.png";
-import PlaceImage2 from "../../assets/images/Place/placeImage_amusement.png";
-import PlaceImage3 from "../../assets/images/Place/placeImage_tree.png";
-import PlaceImage4 from "@/assets/images/Place/placeImage_dining.png"
-import PlaceImage5 from "@/assets/images/Place/placeImage_culture.png"
+import PlaceImage1 from "../../assets/images/Place/placeImage_building.svg";
+import PlaceImage2 from "../../assets/images/Place/placeImage_amusement.svg";
+import PlaceImage3 from "../../assets/images/Place/placeImage_tree.svg";
+import PlaceImage4 from "@/assets/images/Place/placeImage_dining.svg"
+import PlaceImage5 from "@/assets/images/Place/placeImage_culture.svg"
 import { useLocation } from "react-router-dom";
+import SliderButton from '../../components/voice-recognition/SlideButton';
 
 export default function Place() {
   const imgArray = [PlaceImage1, PlaceImage2, PlaceImage3, PlaceImage4, PlaceImage5]; // 장소 이미지 배열
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [Place, setPlace] = useState("");
   const [placeCode, setPlaceCode] = useState("");
+  const [isNearSearch, setIsNearSearch] = useState(true);
 
   const location = useLocation();
   // 데이터 받아오기
   const Data = location.state || null;
-  console.log("keyword Data : ", Data);
 
   const placeCodeToIndex = () => { // 장소 코드를 인덱스로 변환
     if (placeCode === 'AD5') return 0;
@@ -45,6 +46,14 @@ export default function Place() {
 
   return (
     <PlaceContainer>
+      <ButtonWrap>
+        <SliderButton
+          isSelected={!isNearSearch}
+          onClick={()=>setIsNearSearch(!isNearSearch)}
+          option1="전체"
+          option2="내 주변"
+        />
+      </ButtonWrap>
       <MainText>
         {"' "}
         {Place}
@@ -55,7 +64,11 @@ export default function Place() {
           src={imgArray[currentImageIndex]}
           alt={`PlaceImage ${currentImageIndex + 1}`}
         />
-        <MapContainer searchPlace={Place} setPlaceCode={setPlaceCode} />
+        <MapContainer 
+          searchPlace={Place} 
+          setPlaceCode={setPlaceCode}
+          isNearSearch={isNearSearch}  
+        />
       </ContentWrap>
     </PlaceContainer>
   );
@@ -68,6 +81,11 @@ const PlaceContainer = styled.div`
   white-space: pre-wrap;
   width: 100%;
   max-height: 844px;
+`;
+
+const ButtonWrap = styled.div`
+  display: flex;
+  justify-content: center;
 `;
 
 const MainText = styled.div`
@@ -86,5 +104,6 @@ const ContentWrap = styled.div`
   width: 100%;
   display: flex;
   flex-wrap: wrap;
+  align-items: center;
   justify-content: center;
 `;
