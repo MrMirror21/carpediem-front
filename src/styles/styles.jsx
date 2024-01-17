@@ -121,22 +121,22 @@ export const BlackButton = styled.button`
   justify-content: center;
   align-items: center;
   background-color: black;
-  border-radius: 7%;
+  border-radius: 10px;
   animation: ${slideInUp("80%")} 0.8s ease-out;
   cursor: pointer;
 `;
 export const YellowButtonR = styled.button`
   display: flex;
-  color: #ffe03d;
+  color: #00A3FF;
   font-family: Nanum Pen;
   margin-top: 17px;
   width: 309px;
   height: 74px;
   justify-content: center;
   align-items: center;
-  background-color: #00a3ff;
+  background-color: #ffe03d;
   border: 1px solid #dadad7;
-  border-radius: 8%;
+  border-radius: 10px;
   animation: ${slideInUp("90%")} 0.8s ease-out;
   cursor: pointer;
 `;
@@ -151,41 +151,26 @@ export const ITContainer = styled.div`
   flex-direction: column;
   background-color: #fff;
   align-items: center;
-  border-radius: 3%;
+  border-radius: 10px;
   text-align: center;
 `;
 
 export const PersonImage = styled.div`
-  margin-top: 107px;
-  width: 160px;
-  height: 202px;
+  margin-top: 72px;
+  width: 310px;
+  height: 222px;
   display: flex;
   background-image: url(${ITPerson});
   background-repeat: no-repeat;
   animation: ${slideInUp("40%")} 0.8s ease-out;
 `;
 
-export const GroomImage = styled.div`
-  position: absolute;
-  top: 30px;
-  right: 32px;
-  margin-top: 107px;
-  width: 75px;
-  height: 70px;
-  display: flex;
-  background-image: url(${Groom});
-  background-repeat: no-repeat;
-
-  z-index: 50;
-  animation: ${InUp("30")} 0.8s ease-out;
-`;
-
 export const ITTitle = styled.div`
   display: flex;
+  width: 100%;
+  margin-bottom: 22px;
   font-size: 20px;
   font-weight: 600;
-  margin-top: 24px;
-
   animation: ${slideInUp("80%")} 0.8s ease-out;
   pointer-events: none;
 `;
@@ -195,12 +180,11 @@ export const ITContent = styled.div`
   width: 78%;
   height: 18%;
   display: flex;
+  flex-direction: column;
   padding: 15px;
-  justify-content: center;
-  align-items: center;
   border: 1px solid gray;
   border-radius: 7%;
-
+  text-align: left;
   animation: ${slideInUp("20%")} 0.8s ease-out;
   pointer-events: none;
 `;
@@ -214,9 +198,9 @@ export const YellowButton = styled(YellowButtonR)`
   height: 74px;
   justify-content: center;
   align-items: center;
-  background-color: #00a3ff;
+  background-color: #ffe03d;
   border: 1px solid #dadad7;
-  border-radius: 8%;
+  border-radius: 10px;
   animation: ${slideInUp("70%")} 0.8s ease-out;
   cursor: pointer;
 `;
@@ -240,6 +224,7 @@ export const Carpediem = styled.div`
   height: 28px;
   background-image: url(${Carpe});
   background-repeat: no-repeat;
+  color: #00a3ff;
 `;
 
 export const CarpediemText = styled.div`
@@ -247,6 +232,7 @@ export const CarpediemText = styled.div`
   height: 80px;
   background-image: url(${CarpeText});
   background-repeat: no-repeat;
+  color: #00a3ff;  
 `;
 
 export const CarpediemLogo = styled.div`
