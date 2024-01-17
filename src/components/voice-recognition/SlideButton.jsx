@@ -1,13 +1,11 @@
-import { useNavigate } from 'react-router-dom';
 import styled from 'styled-components';
 
-const SliderButton = ({isVoice}) => {
-  const navigate = useNavigate();
+const SliderButton = ({isSelected, onClick, option1, option2}) => {
 return (
 <>
 <SlideContainer>
-        <SlideButton className={isVoice ? "selected" : ""} onClick={()=>navigate("/voice-recognition")}>음성인식</SlideButton>
-        <SlideButton className={isVoice ? "" : "selected"} onClick={()=>navigate("/text")}>텍스트</SlideButton>
+        <SlideButton className={isSelected ? "selected" : ""} onClick={onClick}>{option1}</SlideButton>
+        <SlideButton className={isSelected ? "" : "selected"} onClick={onClick}>{option2}</SlideButton>
 </SlideContainer>
 </>
 )
