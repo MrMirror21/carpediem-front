@@ -76,7 +76,8 @@ const Instructions = styled.div`
   width: 274.08px;
   height: 43.309px;
   flex-shrink: 0;
-  background: no-repeat center url(${NotiBalloon});
+  background: no-repeat center;
+  background-image: url(${NotiBalloon});
   margin-bottom: 15px;
 `;
 
@@ -102,7 +103,8 @@ const MicIcon = styled.div`
   justify-content: center;
   width: 149px;
   height: 149px;
-  background: no-repeat center url(${Pen});
+  background: no-repeat center;
+  background-image: url(${Pen});
   fill: white;
 `;
 
