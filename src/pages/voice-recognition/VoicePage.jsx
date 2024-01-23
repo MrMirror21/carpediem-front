@@ -87,8 +87,9 @@ const Instructions = styled.div`
   width: 274.08px;
   height: 43.309px;
   flex-shrink: 0;
-  background: no-repeat center;
   background-image: url(${NotiBalloon});
+  background-repeat: no-repeat;
+  background-position: center;
   margin-bottom: 15px;
 `;
 const VoiceRecord = styled(PageBody)`
@@ -125,8 +126,9 @@ const MicIcon = styled.div`
   justify-content: center;
   width: 149px;
   height: 149px;
-  background: no-repeat center;
   background-image : url(${Mic});
+  background-repeat: no-repeat;
+  background-position: center;
   fill: white;
 `;
 
@@ -184,8 +186,9 @@ const SmallMicIcon = styled.div`
   width: 20px;
   height: 20px;
   flex-shrink: 0;
-  background: no-repeat center;
   background-image: url(${SmallMic})
+  background-repeat: no-repeat;
+  background-position: center;
 `;
 
 const ResetSection = styled.div`
@@ -201,8 +204,9 @@ const ResetSection = styled.div`
 `;
 
 const ResetIcon = styled.div`
-  background: no-repeat center;
   background-image: url(${Reset});
+  background-repeat: no-repeat;
+  background-position: center;
   fill: #8a898e;
   width: 18px;
   height: 18px;
