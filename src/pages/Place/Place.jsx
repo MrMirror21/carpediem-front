@@ -2,11 +2,11 @@ import styled from "styled-components";
 import { useState } from "react";
 import MapContainer from "/src/components/Place/MapContainer";
 import { useEffect } from "react";
-import PlaceImage1 from "@/assets/images/Place/placeImage_building.svg";
-import PlaceImage2 from "@/assets/images/Place/placeImage_amusement.svg";
-import PlaceImage3 from "@/assets/images/Place/placeImage_tree.svg";
-import PlaceImage4 from "@/assets/images/Place/placeImage_dining.svg"
-import PlaceImage5 from "@/assets/images/Place/placeImage_culture.svg"
+import PlaceImage1 from "/assets/images/Place/placeImage_building.svg";
+import PlaceImage2 from "/assets/images/Place/placeImage_amusement.svg";
+import PlaceImage3 from "/assets/images/Place/placeImage_tree.svg";
+import PlaceImage4 from "/assets/images/Place/placeImage_dining.svg"
+import PlaceImage5 from "/assets/images/Place/placeImage_culture.svg"
 import { useLocation } from "react-router-dom";
 import SliderButton from '../../components/voice-recognition/SlideButton';
 

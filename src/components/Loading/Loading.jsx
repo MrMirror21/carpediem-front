@@ -1,4 +1,4 @@
-import Spinner from "@/assets/images/Spinner/Spinner2.gif";
+import Spinner from "/assets/images/Spinner/Spinner2.gif";
 import styled from "styled-components";
 import PropTypes from "prop-types";
 

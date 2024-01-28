@@ -1,18 +1,18 @@
 import styled, { keyframes } from "styled-components";
 import { theme } from "/src/styles/theme";
-import R_Tool from "@/assets/images/Roulette/RouletteTool.svg";
-import R_Pin from "@/assets/images/Roulette/RoulettePin.svg";
-import Result from "@/assets/images/Roulette/ResultBox.svg";
-import Prev from "@/assets/images/Roulette/PrevBox.svg";
-import DownLoad from "@/assets/images/Roulette/download.svg";
-import Arrow from "@/assets/images/Roulette/arrow.svg";
-import Logo from "@/assets/images/IT/logo.svg";
-import ITLogo from "@/assets/images/IT/logo2.svg";
-import ITPerson from "@/assets/images/IT/Person.svg";
-import Groom from "@/assets/images/IT/goorm.svg";
-import Carpe from "@/assets/images/IT/carpediem.svg";
-import CarpeText from "@/assets/images/IT/carpediemtext.svg";
-import HomeLogo from "@/assets/images/Home/logo.svg";
+import R_Tool from "/assets/images/Roulette/RouletteTool.svg";
+import R_Pin from "/assets/images/Roulette/RoulettePin.svg";
+import Result from "/assets/images/Roulette/ResultBox.svg";
+import Prev from "/assets/images/Roulette/PrevBox.svg";
+import DownLoad from "/assets/images/Roulette/download.svg";
+import Arrow from "/assets/images/Roulette/arrow.svg";
+import Logo from "/assets/images/IT/logo.svg";
+import ITLogo from "/assets/images/IT/logo2.svg";
+import ITPerson from "/assets/images/IT/Person.svg";
+import Groom from "/assets/images/IT/goorm.svg";
+import Carpe from "/assets/images/IT/carpediem.svg";
+import CarpeText from "/assets/images/IT/carpediemtext.svg";
+import HomeLogo from "/assets/images/Home/logo.svg";
 
 // 슬라이드 애니메이션 키프레임
 const slideInUp = (percentage) => keyframes`
