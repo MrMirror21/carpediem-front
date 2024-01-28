@@ -1,7 +1,7 @@
 import { Wheel } from "react-custom-roulette";
 import { useState, useEffect } from "react";
 import { useNavigate, useLocation } from "react-router-dom";
-import StarLight from "@/components/Roulette/StarLight";
+import StarLight from "/src/components/Roulette/StarLight";
 import {
   FlexRow,
   RouletteWrapper,
@@ -12,8 +12,8 @@ import {
   PrevBox,
   DownLoadImage,
   ArrowImage,
-} from "@/styles/styles";
-import "@/styles//Roulette.css";
+} from "/src/styles/styles";
+import "/src/styles//Roulette.css";
 import { useRef } from "react";
 import html2canvas from "html2canvas";
 import saveAs from "file-saver";

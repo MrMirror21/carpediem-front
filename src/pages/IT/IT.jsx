@@ -5,9 +5,8 @@ import {
   YellowButton,
   ITTitle,
   ITContent,
-  GroomImage,
   Carpediem,
-} from "@/styles/styles.jsx";
+} from "/src/styles/styles.jsx";
 import { useLocation, useNavigate } from "react-router-dom";
 
 export default function IT() {
@@ -24,10 +23,11 @@ export default function IT() {
   return (
     <RouletteWrapper>
       <ITContainer>
-        <GroomImage />
         <PersonImage />
-        <ITTitle>{data.result.title}</ITTitle>
-        <ITContent>{data.result.content}</ITContent>
+        <ITContent>
+          <ITTitle>{data.result.title}</ITTitle>          
+          {data.result.content}
+        </ITContent>
         <YellowButton onClick={handleVoice}>
           <Carpediem />
         </YellowButton>

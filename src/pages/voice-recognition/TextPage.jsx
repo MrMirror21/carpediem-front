@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { Wrapper } from "@/styles/styles";
-import SliderButton from "@/components/voice-recognition/SlideButton";
-import NotiBalloon from "@/assets/images/notificate_balloon.svg";
-import Pen from "@/assets/images/Pen.svg";
+import { Wrapper } from "/src/styles/styles";
+import SliderButton from "/src/components/voice-recognition/SlideButton";
+import NotiBalloon from "/assets/images/notificate_balloon.svg";
+import Pen from "/assets/images/Pen.svg";
 import { useState } from "react";
-import Loading from "@/components/Loading/Loading";
+import Loading from "/src/components/Loading/Loading";
 import { useNavigate } from "react-router-dom";
 import { getKeywords } from "../../api/getKeywords";
 
@@ -76,7 +76,9 @@ const Instructions = styled.div`
   width: 274.08px;
   height: 43.309px;
   flex-shrink: 0;
-  background: no-repeat center url(${NotiBalloon});
+  background-image: url(${NotiBalloon});
+  background-repeat: no-repeat;
+  background-position: center;
   margin-bottom: 15px;
 `;
 
@@ -102,7 +104,9 @@ const MicIcon = styled.div`
   justify-content: center;
   width: 149px;
   height: 149px;
-  background: no-repeat center url(${Pen});
+  background-image: url(${Pen});
+  background-repeat: no-repeat;
+  background-position: center;
   fill: white;
 `;
 

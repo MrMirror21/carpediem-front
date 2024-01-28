@@ -1,18 +1,18 @@
 import styled from 'styled-components'
 import 'regenerator-runtime'
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
-import { Wrapper } from '@/styles/styles';
-import Mic from '@/assets/images/mic.svg'
-import SmallMic from '@/assets/images/mic_s.svg'
-import NotiBalloon from '@/assets/images/notificate_balloon.svg'
+import { Wrapper } from '/src/styles/styles';
+import Mic from '/assets/images/mic.svg'
+import SmallMic from '/assets/images/mic_s.svg'
+import NotiBalloon from '/assets/images/notificate_balloon.svg'
 import { useState } from 'react';
-import SliderButton from '@/components/voice-recognition/SlideButton';
+import SliderButton from '/src/components/voice-recognition/SlideButton';
 import { useNavigate } from 'react-router-dom';
-import Loading from '@/components/Loading/Loading';
-import RecordingGIF from '@/assets/images/Spinner/recording.gif';
-import PulseGIF from '@/assets/images/Spinner/pulse.gif';
-import Reset from '@/assets/images/voice-recognition/reset.svg';
-import TextPage from '@/pages/voice-recognition/TextPage.jsx';
+import Loading from '/src/components/Loading/Loading';
+import RecordingGIF from '/assets/images/Spinner/recording.gif';
+import PulseGIF from '/assets/images/Spinner/pulse.gif';
+import Reset from '/assets/images/voice-recognition/reset.svg';
+import TextPage from '/src/pages/voice-recognition/TextPage.jsx';
 import { getKeywords } from '../../api/getKeywords';
 
 const VoicePage = () => {
@@ -87,7 +87,9 @@ const Instructions = styled.div`
   width: 274.08px;
   height: 43.309px;
   flex-shrink: 0;
-  background: no-repeat center url(${NotiBalloon});
+  background-image: url(${NotiBalloon});
+  background-repeat: no-repeat;
+  background-position: center;
   margin-bottom: 15px;
 `;
 const VoiceRecord = styled(PageBody)`
@@ -124,7 +126,9 @@ const MicIcon = styled.div`
   justify-content: center;
   width: 149px;
   height: 149px;
-  background: no-repeat center url(${Mic});
+  background-image : url(${Mic});
+  background-repeat: no-repeat;
+  background-position: center;
   fill: white;
 `;
 
@@ -182,7 +186,9 @@ const SmallMicIcon = styled.div`
   width: 20px;
   height: 20px;
   flex-shrink: 0;
-  background: no-repeat center url(${SmallMic});
+  background-image: url(${SmallMic})
+  background-repeat: no-repeat;
+  background-position: center;
 `;
 
 const ResetSection = styled.div`
@@ -198,7 +204,9 @@ const ResetSection = styled.div`
 `;
 
 const ResetIcon = styled.div`
-  background: no-repeat center url(${Reset});
+  background-image: url(${Reset});
+  background-repeat: no-repeat;
+  background-position: center;
   fill: #8a898e;
   width: 18px;
   height: 18px;

@@ -7,8 +7,8 @@ import {
   YellowButtonR,
   Carpediem,
   CarpediemText,
-} from "@/styles/styles.jsx";
-import { dummy } from "@/api/ITDummy";
+} from "/src/styles/styles.jsx";
+import { dummy } from "/src/api/ITDummy";
 import { useNavigate } from "react-router-dom";
 // import { apiClient } from "@/api/ApiClient";
 // import axios from "axios";
@@ -33,7 +33,7 @@ export default function Randing() {
 
   const getITData = async () => {
     try {
-      const response = await fetch(`https://dev.umc-carpediem.shop/info/today`);
+      const response = await fetch(`https://dev.umc-carpediem.shop/api/info/today`);
       const body = await response.json();
       console.log("data : ", body);
       navigate("/IT", { state: body });

@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
 import styled from "styled-components";
-import nextButton from "../../assets/images/Place/nextButton.png";
-import prevButton from "../../assets/images/Place/prevButton.png";
+import nextButton from "/assets/images/Place/nextButton.png";
+import prevButton from "/assets/images/Place/prevButton.png";
 import { Link } from "react-router-dom";
 
 const { kakao } = window;
