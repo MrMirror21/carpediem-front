@@ -1,7 +1,7 @@
 import styled from "styled-components";
-import StarLight1 from "@/assets/images/Roulette/starlight1.svg";
-import StarLight2 from "@/assets/images/Roulette/starlight2.svg";
-import StarLight3 from "@/assets/images/Roulette/starlight3.svg";
+import StarLight1 from "/assets/images/Roulette/starlight1.svg";
+import StarLight2 from "/assets/images/Roulette/starlight2.svg";
+import StarLight3 from "/assets/images/Roulette/starlight3.svg";
 import { useEffect, useState } from "react";
 
 const Wrapper = styled.div`

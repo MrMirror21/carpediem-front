@@ -1,10 +1,10 @@
 import styled from "styled-components";
-import { Wrapper } from "@/styles/styles";
-import SliderButton from "@/components/voice-recognition/SlideButton";
-import NotiBalloon from "@/assets/images/notificate_balloon.svg";
-import Pen from "@/assets/images/Pen.svg";
+import { Wrapper } from "/src/styles/styles";
+import SliderButton from "/src/components/voice-recognition/SlideButton";
+import NotiBalloon from "/assets/images/notificate_balloon.svg";
+import Pen from "/assets/images/Pen.svg";
 import { useState } from "react";
-import Loading from "@/components/Loading/Loading";
+import Loading from "/src/components/Loading/Loading";
 import { useNavigate } from "react-router-dom";
 import { getKeywords } from "../../api/getKeywords";
 

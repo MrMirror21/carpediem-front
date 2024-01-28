@@ -1,5 +1,5 @@
-import { theme } from "@/styles/theme";
-import { Sample } from "@/styles/styles";
+import { theme } from "/src/styles/theme";
+import { Sample } from "/src/styles/styles";
 
 export default function TestPage() {
   return (
