@@ -28,9 +28,14 @@ const VoicePage = () => {
     }
   };
   const handleSubmit = async () => {
+    toggleListening();
     setIsLoading(true);
     getKeywords(transcript, navigate);
-}
+  }
+  const handlePageTransition = () => {
+    if (listening) {SpeechRecognition.stopListening()}
+    navigate("/text")
+  }
 return (
   <>
     {isVoice ?
@@ -39,7 +44,7 @@ return (
       <PageBody>
       <SliderButton
         isSelected={isVoice}
-        onClick={()=>navigate("/text")}
+        onClick={handlePageTransition}
         option1="음성인식"
         option2="텍스트"
       />
