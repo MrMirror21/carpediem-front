@@ -7,8 +7,8 @@ import {
   YellowButtonR,
   Carpediem,
   CarpediemText,
-} from "@/styles/styles.jsx";
-import { dummy } from "@/api/ITDummy";
+} from "/src/styles/styles.jsx";
+import { dummy } from "/src/api/ITDummy";
 import { useNavigate } from "react-router-dom";
 // import { apiClient } from "@/api/ApiClient";
 // import axios from "axios";

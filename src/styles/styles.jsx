@@ -1,5 +1,5 @@
 import styled, { keyframes } from "styled-components";
-import { theme } from "@/styles/theme";
+import { theme } from "/src/styles/theme";
 import R_Tool from "@/assets/images/Roulette/RouletteTool.svg";
 import R_Pin from "@/assets/images/Roulette/RoulettePin.svg";
 import Result from "@/assets/images/Roulette/ResultBox.svg";

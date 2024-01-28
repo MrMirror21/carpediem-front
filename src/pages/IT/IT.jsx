@@ -6,7 +6,7 @@ import {
   ITTitle,
   ITContent,
   Carpediem,
-} from "@/styles/styles.jsx";
+} from "/src/styles/styles.jsx";
 import { useLocation, useNavigate } from "react-router-dom";
 
 export default function IT() {

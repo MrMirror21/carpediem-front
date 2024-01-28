@@ -3,7 +3,7 @@ import {
   HomeImage,
   StyledTitle,
   CarpediemLogo,
-} from "@/styles/styles.jsx";
+} from "/src/styles/styles.jsx";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 

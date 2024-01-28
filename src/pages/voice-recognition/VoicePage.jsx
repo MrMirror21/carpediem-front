@@ -1,18 +1,18 @@
 import styled from 'styled-components'
 import 'regenerator-runtime'
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
-import { Wrapper } from '@/styles/styles';
+import { Wrapper } from '/src/styles/styles';
 import Mic from '@/assets/images/mic.svg'
 import SmallMic from '@/assets/images/mic_s.svg'
 import NotiBalloon from '@/assets/images/notificate_balloon.svg'
 import { useState } from 'react';
-import SliderButton from '@/components/voice-recognition/SlideButton';
+import SliderButton from '/src/components/voice-recognition/SlideButton';
 import { useNavigate } from 'react-router-dom';
-import Loading from '@/components/Loading/Loading';
+import Loading from '/src/components/Loading/Loading';
 import RecordingGIF from '@/assets/images/Spinner/recording.gif';
 import PulseGIF from '@/assets/images/Spinner/pulse.gif';
 import Reset from '@/assets/images/voice-recognition/reset.svg';
-import TextPage from '@/pages/voice-recognition/TextPage.jsx';
+import TextPage from '/src/pages/voice-recognition/TextPage.jsx';
 import { getKeywords } from '../../api/getKeywords';
 
 const VoicePage = () => {
