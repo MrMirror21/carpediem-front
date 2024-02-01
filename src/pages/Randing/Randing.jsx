@@ -11,6 +11,7 @@ import {
 } from "/src/styles/styles.jsx";
 import { dummy } from "/src/api/ITDummy";
 import { useNavigate } from "react-router-dom";
+import "/src/styles//Randing.css";
 
 export default function Randing() {
   const navigate = useNavigate();
@@ -36,7 +37,7 @@ export default function Randing() {
   return (
     <RouletteWrapper>
       <ITContainer>
-        <LogoImage />
+        <LogoImage className="randing-logo"/>
         <div className="title">
           <StyledParagraph>
             <CarpediemText />

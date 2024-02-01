@@ -71,9 +71,7 @@ export const HomeImage = styled.div`
   height: 180px;
   display: flex;
   align-items: center;
-  @media (min-resolution: 192dpi) {
-    background-image: url(${Logo}); /* 고해상도 이미지 경로 */
-  }
+  background-image: url(${Logo});
   background-repeat: no-repeat;
   animation: ${slideInUp("40%")} 0.8s ease-out;
 `;
@@ -96,9 +94,7 @@ export const LogoImage = styled.div`
   height: 180px;
   display: flex;
   align-items: center;
-  @media (min-resolution: 192dpi) {
-    background-image: url(${ITLogo}); /* 고해상도 이미지 경로 */
-  }
+  background-image: url(${ITLogo});
   background-repeat: no-repeat;
 
   animation: ${slideInUp("40%")} 0.8s ease-out;
@@ -113,11 +109,6 @@ export const StyledParagraph = styled.div`
   text-align: center;
   animation: ${slideInUp("70%")} 0.8s ease-out;
   pointer-events: none;
-  @media (max-width: ${theme.mobile}) {
-    font-family: Pretendard;
-    font-size: 18px;
-    font-weight: 800; 
-  }
 `;
 
 export const BlackButton = styled.button`

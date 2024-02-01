@@ -1,0 +1,13 @@
+@media (max-width: 500px) {
+    .mobile-text {
+      font-family: Pretendard;
+      font-size: 18px;
+      font-weight: 800; 
+    }
+  }
+  
+  @media (min-resolution: 192dpi) {
+    .randing-logo {
+    background-image: url(/assets/images/IT/logo2.svg);
+    }
+  }
