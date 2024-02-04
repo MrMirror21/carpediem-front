@@ -218,11 +218,10 @@ const ResetIcon = styled.div`
 `;
 
 const SubmitButton = styled.div`
-  position: absolute;
-  bottom: 53px;
   display: flex;
   width: 336px;
   height: 51px;
+  margin-top: 173.5px;
   align-items: center;
   justify-content: center;
   border-radius: 8px;
