@@ -1,0 +1,5 @@
+@media (min-resolution: 192dpi) {
+    .home-logo {
+        background-image: url('/assets/images/IT/logo@2x.svg');
+    }
+}

@@ -4,6 +4,7 @@ import {
   StyledTitle,
   CarpediemLogo,
 } from "/src/styles/styles.jsx";
+import "/src/styles//Home.css";
 import { useLocation, useNavigate } from "react-router-dom";
 import { useEffect } from "react";
 
@@ -30,7 +31,7 @@ export default function IT() {
     <Page>
       <HomeImage onClick={handlePage} />
       <StyledTitle>
-        <CarpediemLogo />
+        <CarpediemLogo className="home-logo"/>
       </StyledTitle>
     </Page>
   );
