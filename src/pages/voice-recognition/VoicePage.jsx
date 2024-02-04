@@ -28,9 +28,14 @@ const VoicePage = () => {
     }
   };
   const handleSubmit = async () => {
+    toggleListening();
     setIsLoading(true);
     getKeywords(transcript, navigate);
-}
+  }
+  const handlePageTransition = () => {
+    if (listening) {SpeechRecognition.stopListening()}
+    navigate("/text")
+  }
 return (
   <>
     {isVoice ?
@@ -39,7 +44,7 @@ return (
       <PageBody>
       <SliderButton
         isSelected={isVoice}
-        onClick={()=>navigate("/text")}
+        onClick={handlePageTransition}
         option1="음성인식"
         option2="텍스트"
       />
@@ -213,11 +218,10 @@ const ResetIcon = styled.div`
 `;
 
 const SubmitButton = styled.div`
-  position: absolute;
-  bottom: 53px;
   display: flex;
   width: 336px;
   height: 51px;
+  margin-top: 173.5px;
   align-items: center;
   justify-content: center;
   border-radius: 8px;

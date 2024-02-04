@@ -130,9 +130,8 @@ const TextContainer = styled.textarea`
 `;
 
 const SubmitButton = styled.div`
-  position: absolute;
-  bottom: 53px;
   display: flex;
+  margin-top: 30px;
   width: 336px;
   height: 51px;
   align-items: center;
