@@ -83,6 +83,7 @@ export default function Place() {
 }
 
 const PlaceContainer = styled.div`
+  font-family: Pretendard;
   height: 100%;
   width: 100%;
   max-width: 390px;
@@ -99,7 +100,8 @@ const ButtonWrap = styled.div`
 `;
 
 const MainText = styled.div`
-  font-family: "Pretendard";
+  font-family: Pretendard;
+
   font-size: 21px;
   font-weight: 600;
   margin: 0px 0px 15px 30px;
