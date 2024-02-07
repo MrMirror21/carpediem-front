@@ -55,11 +55,11 @@ const MapContainer = ({ searchPlace, setPlaceCode, isNearSearch }) => {
             setPlaceCode(data[0].category_group_code);
             console.log(data);
           }
-        }
+        };
         const ps = new kakao.maps.services.Places();
         ps.keywordSearch(searchPlace, placesSearchCB, {
           location: currentCoordinate,
-          radius: (isNearSearch ? 3000 : 20000)
+          radius: isNearSearch ? 3000 : 20000,
         });
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -193,6 +193,7 @@ const PlacePageWrap = styled.div`
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  font-family: Pretendard;
 `;
 
 const PlaceWrap = styled.div`
@@ -204,6 +205,7 @@ const PlaceWrap = styled.div`
 
 const PlaceText = styled.div`
   font-weight: bold;
+  font-family: Pretendard;
 `;
 
 const PlaceBox = styled.div`
@@ -211,6 +213,7 @@ const PlaceBox = styled.div`
   flex-wrap: wrap;
   flex-direction: column;
   position: relative;
+  font-family: Pretendard;
 
   width: 280px;
   height: 180px;
@@ -237,6 +240,8 @@ const PlaceNullBox = styled.div`
 `;
 
 const AdressText = styled.div`
+  font-family: Pretendard;
+
   display: flex;
   align-items: center;
   margin-top: 15px;
@@ -302,6 +307,6 @@ const AnotherButton = styled(Link)`
   font-size: 15px;
   font-style: normal;
   font-weight: 800;
-
-  margin-top: 80px;
+  font-family: Pretendard;
+  margin-top: 60px;
 `;
