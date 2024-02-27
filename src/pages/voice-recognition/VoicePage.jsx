@@ -1,8 +1,8 @@
+import styled from 'styled-components'
+import 'regenerator-runtime'
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import SpeechRecognition, { useSpeechRecognition } from 'react-speech-recognition';
-import styled from 'styled-components'
-import 'regenerator-runtime'
 import { Wrapper } from '/src/styles/styles';
 import Mic from '/assets/images/mic.svg'
 import SmallMic from '/assets/images/mic_s.svg'
