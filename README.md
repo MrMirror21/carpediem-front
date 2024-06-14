@@ -1,3 +1,4 @@
+## 🏆 5th UMC Seoul Hackathon 최우수상
 ## 👋 carpe diem! 소개 
 
 다재다능하고 활동적인 ESTP를 위한 맞춤 서비스 'carpe diem!'을 소개합니다 🙌 <br>
@@ -6,6 +7,10 @@ carpe diem!에서는 gpt를 이용한 음성녹음 분석 기능 통해 매일 �
 <img src="https://img.shields.io/badge/React-41BADB?style=flat-square&logo=react&logoColor=white" /> <img src="https://img.shields.io/badge/spring boot-6db33f?style=flat-square&logo=springboot&logoColor=white" />
 
 ---
+~24/3/3 까지 라이브 서비스 되었으며, 현재 음성인식 기능 외 서버가 폐쇄되었음을 알립니다.
+
+## 서비스 시연 영상(24.1.2)
+https://youtu.be/bounRp-UQIc
 
 ## 🎯 핵심 기능
 
@@ -21,8 +26,11 @@ carpe diem!에서는 gpt를 이용한 음성녹음 분석 기능 통해 매일 �
 ### 🗺️ 활동 장소 추천
 추천된 활동을 바탕으로, 해당 활동을 할 수 있는 장소 정보를 제공합니다.
 
-## 서비스 시연 영상
-https://youtu.be/bounRp-UQIc
+## Front-End
+- 사용자로부터 입력 받은 <b>음성을 텍스트화해 실시간 화면 표시 기능 및 UI 개발</b>
+- OpenAI API 활용, 룰렛 키워드 생성 기능 구현(현재 서버로 이전), 프롬프트 개선
+- KaKao Map API 활용, 사용자의 <b>현재 위치 기반 장소 탐색 옵션 구현</b>
+- html2canvas 라이브러리 활용, 룰렛 결과를 버튼으로 캡쳐, 사용자의 기기에 저장 기능 구현
 
 ---
 ## 🔍 Architecture
