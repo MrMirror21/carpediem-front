@@ -7,7 +7,7 @@ carpe diem!에서는 gpt를 이용한 음성녹음 분석 기능 통해 매일 �
 <img src="https://img.shields.io/badge/React-41BADB?style=flat-square&logo=react&logoColor=white" /> <img src="https://img.shields.io/badge/spring boot-6db33f?style=flat-square&logo=springboot&logoColor=white" />
 
 ---
-~24/3/3 까지 라이브 서비스 되었으며, 현재 음성인식 기능 외 서버가 폐쇄되었음을 알립니다.
+~24/3/3 까지 라이브 서비스 되었으며, 현재 서버가 폐쇄되었음을 알립니다.
 
 ## 서비스 시연 영상(24.1.2)
 https://youtu.be/bounRp-UQIc
