@@ -73,7 +73,6 @@ export const HomeImage = styled.div`
   align-items: center;
   background-image: url(${Logo});
   background-repeat: no-repeat;
-
   animation: ${slideInUp("40%")} 0.8s ease-out;
 `;
 
@@ -124,7 +123,13 @@ export const BlackButton = styled.button`
   border-radius: 10px;
   animation: ${slideInUp("80%")} 0.8s ease-out;
   cursor: pointer;
+  @media (max-width: ${theme.mobile}) { 
+    font-family: Pretendard;
+    font-size: 18px;
+    font-weight: 800; 
+  }
 `;
+
 export const YellowButtonR = styled.button`
   display: flex;
   color: #00A3FF;
