@@ -1,4 +1,4 @@
-## 🏆 5th UMC Seoul Hackathon 최우수상
+## 🏆 5th UMC Seoul Hackathon 2위
 ## 👋 carpe diem! 소개 
 
 다재다능하고 활동적인 ESTP를 위한 맞춤 서비스 'carpe diem!'을 소개합니다 🙌 <br>
